@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>自动控制原理知识点整理(1) | Hi! I'm CHEN YUHANG.</title><meta name="keywords" content="Automatic Control Theory"><meta name="author" content="CHEN YUHANG"><meta name="copyright" content="CHEN YUHANG"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="稳定性的含义 在外力消失后系统从初始偏差位置回到平衡点的能力 线性定常系统稳定的充分必要条件 对于用状态空间模型描述的系统而言，系数矩阵A的特征值全都具有负实部，对于用状态空间模型描述的系统，讨论的稳定性是基于系统内部状态的，因此，也称内部稳定性。 对于用输入-输出模型描述的系统而言，一个连续时间系统线性定常系统输入-输出稳定的充分必要条件是其微分方程的特征方程的根（即传递函数的极点）全都具有负的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自动控制原理知识点整理(1)">
+<meta property="og:url" content="https://chenyuhang-smp.github.io/2021/08/13/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86(4)/index.html">
+<meta property="og:site_name" content="Hi! I&#39;m CHEN YUHANG.">
+<meta property="og:description" content="稳定性的含义 在外力消失后系统从初始偏差位置回到平衡点的能力 线性定常系统稳定的充分必要条件 对于用状态空间模型描述的系统而言，系数矩阵A的特征值全都具有负实部，对于用状态空间模型描述的系统，讨论的稳定性是基于系统内部状态的，因此，也称内部稳定性。 对于用输入-输出模型描述的系统而言，一个连续时间系统线性定常系统输入-输出稳定的充分必要条件是其微分方程的特征方程的根（即传递函数的极点）全都具有负的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://z3.ax1x.com/2021/07/21/WdkbQS.jpg">
+<meta property="article:published_time" content="2021-08-13T08:18:00.000Z">
+<meta property="article:modified_time" content="2021-08-13T14:22:37.245Z">
+<meta property="article:author" content="CHEN YUHANG">
+<meta property="article:tag" content="Automatic Control Theory">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://z3.ax1x.com/2021/07/21/WdkbQS.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://chenyuhang-smp.github.io/2021/08/13/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86(4)/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '自动控制原理知识点整理(1)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-08-13 22:22:37'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://www.hualigs.cn/image/60b27fa77f368.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://z3.ax1x.com/2021/07/21/WdkbQS.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hi! I'm CHEN YUHANG.</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">自动控制原理知识点整理(1)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-13T08:18:00.000Z" title="发表于 2021-08-13 16:18:00">2021-08-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-08-13T14:22:37.245Z" title="更新于 2021-08-13 22:22:37">2021-08-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Automatic-Control-Theory/">Automatic Control Theory</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="自动控制原理知识点整理(1)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>稳定性的含义</strong></p>
+<p>在外力消失后系统从初始偏差位置回到平衡点的能力</p>
+<p><strong>线性定常系统稳定的充分必要条件</strong></p>
+<p>对于用<strong>状态空间模型</strong>描述的系统而言，系数矩阵A的特征值全都具有负实部，对于用状态空间模型描述的系统，讨论的稳定性是基于系统内部状态的，因此，也称内部稳定性。</p>
+<p>对于用<strong>输入-输出模型</strong>描述的系统而言，一个连续时间系统线性定常系统输入-输出稳定的充分必要条件是其微分方程的特征方程的根（即传递函数的极点）全都具有负的实部；如果特征方程在复平面的右半部内没有根，但在虚轴上有单重根，则称系统是输入-输出临界稳定的。</p>
+<p><strong>线性定常系统内部稳定性和输入-输出稳定性之间的关系</strong></p>
+<p>如果一个系统是内部渐进稳定的，则它一定是输入-输出稳定的；反之，则不一定。</p>
+<p>系统从状态空间模型向输入-输出模型转化时，可能出现零极点对消的情况。</p>
+<p>如果系统没有极点对消，输入-输出稳定性也可以保证内部稳定性。此时，称系统可以由其传递函数完全表征。</p>
+<p><strong>离散时间线性定常系统稳定的充分必要条件</strong></p>
+<p>内部渐进稳定性：系数矩阵G的特征值全都在z平面以原点为中心的单位圆内部；</p>
+<p>输入-输出稳定性：脉冲传递函数的特征根（即脉冲传递函数的极点）全部在z平面以原点为中心的单位圆内；</p>
+<p>只有当离散时间系统可以由其脉冲传递函数完全表征时，即不存在零极点对消的情况下，输入-输出稳定性才等价于内部渐近稳定性。</p>
+<p><strong>控制系统的稳定性分析方法——代数判据</strong></p>
+<p><strong>劳斯判据</strong></p>
+<p>1、线性系统渐近稳定的充分必要条件是，由特征方程系数组成的劳斯表的第一列元素全为正数；</p>
+<p>2、若系统不是渐近稳定的，则系统特征方程在复平面右半部内根的个数等于劳斯表第一列元素符号改变的次数；</p>
+<p>*两种特殊情况：（1）劳斯表某一行第一个元素为零，而其余元素不全为零时，可用一个很小的正数代替进行计算；（2）劳斯表的某一行元素全为零，此时特征方程具有一些对称于虚轴的根，可将不全为零的最后一行的各项对s求导得到一个辅助多项式，用其各项系数代替全为零行的各项</p>
+<p><strong>霍尔维茨判据</strong></p>
+<p>系统稳定的充分必要条件是：由特征方程系数组成的霍尔维茨行列式的各阶主子式均大于0</p>
+<p><strong>稳定裕度和相对稳定性</strong></p>
+<p><strong>劳斯-霍尔维茨判据在离散时间系统中的应用</strong></p>
+<p>作双线性变换</p>
+<script type="math/tex; mode=display">
+z=\frac{s+1}{s-1}</script><p>or</p>
+<script type="math/tex; mode=display">
+s=\frac{z+1}{z-1}</script><p><strong>朱利判据</strong></p>
+<p><strong>控制系统稳定性分析方法——根轨迹图</strong></p>
+<p>根轨迹图：当开环增益K由0变化到$+\infty$​时，闭环极点在s平面上的变化轨迹</p>
+<p><strong>根轨迹绘制基本法则</strong></p>
+<p>幅角条件是根轨迹所应满足的充分必要条件</p>
+<p>1、根轨迹的起点和终点：根轨迹起点为开环极点，根轨迹的终点为系统的开环零点，开环系统由$n-m$个在无穷远处的零点；</p>
+<p>2、根轨迹的分支数：每一个开环极点是一条根轨迹的起点，故系统的根轨迹共有n条分支；</p>
+<p>3、根轨迹的对称性：根轨迹对称于复平面上的实轴；</p>
+<p>4、根轨迹的渐近线：</p>
+<p>5、实轴上的根轨迹：实轴上的任一点，只要它右方的开环零、极点数目的总和为奇数，则该点必为根轨迹上的点（应用幅角条件证明）</p>
+<p>6、实轴上根轨迹的分离点和汇合点：两相邻开环极点之间有根轨迹，则在这两个相邻极点之间必有分离点；两相邻开环零点之间有根轨迹，则在这两相邻零点之间必有汇合点。</p>
+<p>7、根轨迹的出射角和入射角</p>
+<p>8、根轨迹和虚轴的交点及临界根轨迹增益值</p>
+<p><strong>控制系统稳定性分析方法——奈奎斯特稳定性判据</strong></p>
+<p>利用系统的开环频率特性分析闭环系统的稳定性，该判据不仅能判别闭环系统是否稳定是，而且还能指出稳定的程度。</p>
+<p><strong>数学基础</strong></p>
+<p>柯西幅角原理</p>
+<p><strong>奈奎斯特稳定性判据</strong></p>
+<p>系统开环传递函数在右半s平面内有P个极点，且奈奎斯特曲线对(-1, j0)点的包围次数为N(N&gt;0表示顺时针，N&lt;0表示逆时针)，则系统闭环特征方程在右半s平面内根的个数为</p>
+<script type="math/tex; mode=display">
+Z=N+P</script><p>若$Z=0$，闭环系统稳定，否则不稳定</p>
+<p><strong>开环系统含有积分环节时奈奎斯特稳定性判据的应用</strong></p>
+<p><strong>相位裕度</strong></p>
+<p>公式：</p>
+<script type="math/tex; mode=display">
+\gamma=180^{\circ}+\angle G(j\omega_c)</script><p>物理意义：如果系统对频率为$\omega_c$的信号的相位滞后再增加$\gamma(^\circ)$，系统将处于临界稳定状态</p>
+<p><strong>幅值裕度</strong></p>
+<p>设使$\angle G_0(j\omega)=-180^\circ$时的频率为$\omega_g$，则有幅值裕度的定义：</p>
+<script type="math/tex; mode=display">
+k_g=\frac{1}{\abs{G_0(j\omega_g)}}</script><p>$k_g$为系统的赋值裕度。对于最小相位系统，当$k_g$大于1时，闭环系统是稳定的。</p>
+<p>物理意义：如果开环增益再增加$k_g$​倍时，系统将处于临界稳定状态</p>
+<p><strong>对数幅值稳定裕度或增益稳定裕度$L_g$</strong></p>
+<script type="math/tex; mode=display">
+L_g=20lgk_g=-20lg\abs{G_0(j\omega_g)}</script><p><strong>控制系统稳定性分析方法——李雅普诺夫稳定性分析</strong></p>
+<p>李雅普诺夫第二方法分析定常系统状态稳定性</p>
+<p>线性定常连续时间系统的李雅普诺夫方程：</p>
+<script type="math/tex; mode=display">
+A^TP+PA=-Q</script><p>线性定常连续时间系统渐近稳定的充要条件：对任意给定的正定矩阵$Q$，存在正定矩阵$P$为方程的解，由于$Q$是任意给定的，在实际运用中常常取为单位矩阵</p>
+<p>解出矩阵$P$​​后，利用西尔维斯特（Sylvester）准则来判断其正定性</p>
+<p>线性定常离散时间系统的李雅普诺夫方程：</p>
+<script type="math/tex; mode=display">
+A^TPA-P=-Q</script></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">CHEN YUHANG</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://chenyuhang-smp.github.io/2021/08/13/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86(4)/">https://chenyuhang-smp.github.io/2021/08/13/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86(4)/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://CHENYUHANG-smp.github.io" target="_blank">Hi! I'm CHEN YUHANG.</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Automatic-Control-Theory/">Automatic Control Theory</a></div><div class="post_share"><div class="social-share" data-image="https://z3.ax1x.com/2021/07/21/WdkbQS.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/08/13/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86(3)/"><img class="prev-cover" src="https://z3.ax1x.com/2021/07/21/WdkbQS.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">自动控制原理知识点整理(3)</div></div></a></div><div class="next-post pull-right"><a href="/2021/08/07/PyTorch%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/07/21/自动控制原理知识点整理(1)/" title="自动控制原理知识点整理(1)"><img class="cover" src="https://z3.ax1x.com/2021/07/21/WdkbQS.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-21</div><div class="title">自动控制原理知识点整理(1)</div></div></a></div><div><a href="/2021/08/13/自动控制原理知识点整理(2)/" title="自动控制原理知识点整理(2)"><img class="cover" src="https://z3.ax1x.com/2021/07/21/WdkbQS.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-13</div><div class="title">自动控制原理知识点整理(2)</div></div></a></div><div><a href="/2021/08/13/自动控制原理知识点整理(3)/" title="自动控制原理知识点整理(3)"><img class="cover" src="https://z3.ax1x.com/2021/07/21/WdkbQS.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-13</div><div class="title">自动控制原理知识点整理(3)</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://www.hualigs.cn/image/60b27fa77f368.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">CHEN YUHANG</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/CHENYUHANG-smp"><i class="fab fa-github"></i><span>My Github</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/08/13/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86(2)/" title="自动控制原理知识点整理(2)"><img src="https://z3.ax1x.com/2021/07/21/WdkbQS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自动控制原理知识点整理(2)"/></a><div class="content"><a class="title" href="/2021/08/13/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86(2)/" title="自动控制原理知识点整理(2)">自动控制原理知识点整理(2)</a><time datetime="2021-08-13T08:18:00.000Z" title="发表于 2021-08-13 16:18:00">2021-08-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/13/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86(3)/" title="自动控制原理知识点整理(3)"><img src="https://z3.ax1x.com/2021/07/21/WdkbQS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自动控制原理知识点整理(3)"/></a><div class="content"><a class="title" href="/2021/08/13/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86(3)/" title="自动控制原理知识点整理(3)">自动控制原理知识点整理(3)</a><time datetime="2021-08-13T08:18:00.000Z" title="发表于 2021-08-13 16:18:00">2021-08-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/13/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86(4)/" title="自动控制原理知识点整理(1)"><img src="https://z3.ax1x.com/2021/07/21/WdkbQS.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自动控制原理知识点整理(1)"/></a><div class="content"><a class="title" href="/2021/08/13/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86(4)/" title="自动控制原理知识点整理(1)">自动控制原理知识点整理(1)</a><time datetime="2021-08-13T08:18:00.000Z" title="发表于 2021-08-13 16:18:00">2021-08-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/07/PyTorch%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/" title="无题"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2021/08/07/PyTorch%E5%AE%9E%E8%B7%B5%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/" title="无题">无题</a><time datetime="2021-08-07T04:16:24.998Z" title="发表于 2021-08-07 12:16:24">2021-08-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/06/Harris%E8%A7%92%E7%82%B9%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="无题"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2021/08/06/Harris%E8%A7%92%E7%82%B9%E6%A3%80%E6%B5%8B%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="无题">无题</a><time datetime="2021-08-06T04:20:08.770Z" title="发表于 2021-08-06 12:20:08">2021-08-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By CHEN YUHANG</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    loader: {
+      source: {
+        '[tex]/amsCd': '[tex]/amscd'
+      }
+    },
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        addClass: [200,() => {
+          document.querySelectorAll('mjx-container:not([display=\'true\']').forEach( node => {
+            const target = node.parentNode
+            if (!target.classList.contains('has-jax')) {
+              target.classList.add('mathjax-overflow')
+            }
+          })
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
